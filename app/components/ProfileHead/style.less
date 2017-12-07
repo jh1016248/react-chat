@@ -1,0 +1,111 @@
+.profile-head{
+    position: relative;
+    margin: 10 auto;
+    width: 1000px;
+    color: #262626;
+    font-size: 14px;
+    .usercover{
+        width: 100%;
+        height: 240px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .user-info{
+        position: relative;
+        margin: 0 20px 24px;
+        .head{
+            position: absolute;
+            top: -25px;
+            left: 0;
+            width: 160px;
+            height: 160px;
+            border: 4px solid #fff;
+            border-radius: 4px;
+            img{
+                width: 100%;
+                border-radius: 4px;
+                height: 100%;
+            }
+        }
+        .info{
+            padding-top: 16px;
+            padding-left: 196px;
+            .profileheader-contentHead{
+                padding-right: 106px;
+                margin-bottom: 16px;
+                h1{
+                    white-space: nowrap;
+                    overflow: hidden;
+                    font-size: 18px;
+                    font-weight: normal;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    .profileheader-name{
+                        font-size: 26px;
+                        line-height: 30px;
+                    }
+                    .profileheader-headline{
+                        margin-left: 12px;
+                        font-size: 18px;
+                        font-weight: normal;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        word-break: break-word;
+                    }
+                }
+            }
+            .profileheader-contentBody{
+                padding-right: 259px;
+                overflow: hidden;
+                transition: height .3s;
+                line-height: 1.8;
+                >span{
+                    display: block;
+                }
+                .infoItem{
+                    margin-bottom: 10px;
+                }
+                .profileheader-detailItem{
+                    display: flex;
+                    margin-bottom: 18px;
+                    .label{
+                        width: 60px;
+                        margin-right: 37px;
+                        display: inline-block;
+                        font-weight: 700;
+                    }
+                    >div{
+                        flex: 1;
+                    }
+                }
+            }
+            .profileheader-contentFoot{
+                position: relative;
+                margin-top: 10px;
+                .showMore{
+                    color: #8590a6;
+                    span{
+                        margin-left: 10px;
+                    }
+                }
+                .MemberButtonGroup{
+                    position: absolute;
+                    right: 0;
+                    bottom: 0; 
+                    Button{
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+.divider{
+    display: inline-block;
+    margin: 0 8px;
+    width: 1px;
+    height: 10px;
+    background: #e7eaf1;
+}

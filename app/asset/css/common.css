@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.container {
+}
+.wrap{
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.pt52{
+  padding-top: 52px;
+}
+.mt20{
+  margin-top: 20px;
+}
+
+.wrap{ width: 1000px; margin: 0 auto; }
