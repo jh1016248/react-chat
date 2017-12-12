@@ -1,0 +1,21 @@
+{
+  "name": "react-chat",
+  "version": "1.0.0",
+  "description": "react-chat",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./server"
+  },
+  "keywords": [
+    "es6"
+  ],
+  "author": "jh",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "http": "^0.0.0",
+    "path": "^0.12.7",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {}
+}
