@@ -4,7 +4,8 @@ import { AppContainer } from 'react-hot-loader';
 import Root from './Root'
 
 import './asset/css/reset.css';
-import './asset/css/common.css';
+import './asset/css/common.less';
+import './page/page.less';
 
 render(
   <AppContainer>
