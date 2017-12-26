@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>chat</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div id="register">
+      <input type="text" id="userName" placeholder="用户名">
+      <p id="userName-msg" class="error-msg"></p>
+      <a href="javascript:;" class="btn" id="btnRegister">确认</a>
+    </div>
+
+    <div id="room-list" class="wrap">
+      <p>房间列表：</p>
+      <ul class="room-list"></ul>
+    </div>
+
+    <div id="app" class="wrap">
+      <div class="msg-list">
+        <h4 id="roomName"></h4>
+        <ul id="msgList" class="mini-scroll">
+          <!-- <li><span>haha</span>:<p>我来啦</p></li>
+          <li><span>haha</span>:<p>我去啦</p></li>
+          <li><span>haha</span>:<p>你们好吗你们好吗你们好吗你们好吗你们好吗你们好吗你们好吗你们好吗你们好吗你们好吗你们好吗</p></li> -->
+        </ul>
+      </div>
+      <div class="user-list">
+        <p>在线用户</p>
+        <ul id="userList" class="mini-scroll">
+          <!-- <li>haha</li>
+          <li>gary</li>
+          <li>king</li> -->
+        </ul>
+      </div>
+      <div class="send-wrap">
+        <textarea type="text" id="msg"></textarea>
+        <a href="javascript:;" class="btn" id="btnSend">send</a>
+      </div>
+    </div>
+
+    <script src="js/socket.io.js"></script>
+    <script src="js/unit.js"></script>
+    <script src="js/chat.js"></script>
+  </body>
+</html>

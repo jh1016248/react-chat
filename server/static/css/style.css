@@ -1,0 +1,106 @@
+body{
+  margin: 0;
+  background: #f5f5f5;
+  font-size: 14px;
+  color: #333;
+}
+a{
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.wrap{
+  width: 1000px;
+  margin: 0 auto;
+}
+#register{
+  width: 400px;
+  margin: 200px auto;
+}
+#register input{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.error-msg{ color: red; }
+#register .btn{
+  width: 100%;
+}
+#room-list{
+  display: none;
+  opacity: 0;
+}
+.room-list{
+  font-size: 0;
+}
+.room-list li{ display: inline-block; font-size: 14px; width: 200px; padding: 10px 10px 5px; background: #fff; cursor: pointer; box-sizing: borde-box; border-radius: 5px;
+   box-shadow: 0 0 5px rgba(0,0,0,.5); }
+.room-list li p{ margin: 0; line-height: 1; margin-bottom: 5px;}
+.room-list li p.p2{ color: #999; font-size: 12px;}
+
+#app{ display: none; width: 700px;}
+.user-list{ float: left; width: 25%; padding-top: 5px; height: 500px; overflow: hidden; }
+.user-list li{ display: block; height: 30px; line-height: 30px; border-bottom: 1px solid #eee;}
+.user-list li p{ margin: 0; }
+.msg-list{ float: left; width: 70%; padding-top: 5px; height: 500px; overflow: hidden;}
+.msg-list li h4{ margin: 0;}
+.msg-list li p{ max-width: 70%; margin-top: 2px;}
+
+#userList, #msgList{ max-height: 440px; overflow: auto;}
+
+.text-r{ text-align: right;}
+
+.send-wrap{  }
+.send-wrap textarea{ width: 100%; height: 80px; box-sizing: border-box; border: 1px solid #ccc;}
+.send-wrap a{ width: 20%; float: right; display: block;}
+
+
+.mini-scroll::-webkit-scrollbar {
+    width: 10px;
+    height: 10px
+}
+
+.mini-scroll::-webkit-scrollbar-button {
+    display: none
+}
+
+.mini-scroll::-webkit-scrollbar-track {
+    background: #fff
+}
+
+.mini-scroll::-webkit-scrollbar-track-piece {
+    background: #f1f1f1
+}
+
+.mini-scroll::-webkit-scrollbar-thumb {
+    background: #e3e3e3;
+    border-radius: 10px
+}
+
+.mini-scroll::-webkit-scrollbar-corner {
+    background: #82afff
+}
+
+.mini-scroll::-webkit-scrollbar-resizer {
+    background: #ff0bee
+}
+
+
+.btn{
+  display: inline-block;
+  height: 40px;
+  text-align: center;
+  background: #567ace;
+  color: #fff;
+  line-height: 40px;
+  border-radius: 5px;
+}

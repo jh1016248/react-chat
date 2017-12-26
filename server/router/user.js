@@ -1,6 +1,5 @@
-//数据
-const User = require("../dbo/user")
-const Count = require("../dbo/count")
+const User = require("../module/user")
+const Count = require("../module/count")
 module.exports = function(app){
 	app.post("/api/user/register", function (req, res){
 		let nickName = req.body.userName,
@@ -40,7 +39,7 @@ module.exports = function(app){
 					res.send({
 						state: 0,
 						msg: '服务器出错啦'
-					})	
+					})
 				}
 			})
 		}
