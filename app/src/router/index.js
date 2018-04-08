@@ -1,24 +1,67 @@
 import React, { render } from 'react';
 import { Router, IndexRoute, Link, Route, browserHistory, hashHistory } from 'react-router';
-import App from '../App'
+import Index from '../pages/index';
+import Register from '../pages/register';
+import Login from '../pages/login';
 
-import Index from '../page/Index.js';
-import Chat from '../page/Chat.js';
+class App extends React.Component {
+	constructor(props) {
+        super(props)
+        this.state = {
+            bgIndex: 1,
+            pageW: 0, 
+            pageH: 0
+        }
+    }
 
+    updateBackground() {
+        let pageW = window.outerWidth,
+            pageH = window.outerHeight,
+            bgIndex = 9;
+            // bgIndex = Math.floor((Math.random() * 9 ) + 1);
+        this.setState({
+            bgIndex,
+            pageW,
+            pageH
+        })
+        // setTimeout(() => {
+        //     this.updateBackground()
+        // }, 20 * 1000)
+    }
+
+    componentDidMount() {
+        this.updateBackground()
+    }
+
+	render() {
+		return (
+			<div>
+                <div className="background" style={{
+                    backgroundImage: "url(static/images/bg/" + this.state.bgIndex + ".jpg)", 
+                    backgroundSize: this.state.pageW + 'px ' + this.state.pageH + 'px',
+                }}></div>
+				{this.props.children}
+			</div>
+		);
+	}
+}
 
 class router extends React.Component {
 	constructor(props) {
 		super(props)
-	}
-	componentDidMount() {
+    }
 
-	}
+	componentDidMount() {
+    }
+    
 	render() {
 		return (
 			<Router history={browserHistory}>
 				<Route path="/" component={App}>
-					<IndexRoute component={Index} />
-					<Route path="/Chat" component={Chat}></Route>
+					<IndexRoute component={Login} />
+					<Route path="/login" component={Login}></Route>
+					<Route path="/register" component={Register}></Route>
+					<Route path="/main" component={Index}></Route>
 				</Route>
 			</Router>
 		);

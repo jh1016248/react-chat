@@ -1,27 +1,37 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import Root from './Root'
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import Root from './root';
+import themeReducer from './reducer/themeColor';
 
 import './asset/css/reset.css';
 import './asset/css/common.less';
-import './page/page.less';
+import './asset/css/index.less';
+import './asset/js/jUI.less';
+
+const store = createStore(themeReducer);
 
 render(
-  <AppContainer>
-    <Root />
-  </AppContainer>,
-  document.getElementById('root')
+    <Provider store={store}>
+        <AppContainer>
+            <Root />
+        </AppContainer>
+    </Provider>,
+    document.getElementById('root')
 );
 
 if (module.hot) {
-  module.hot.accept('./Root', () => {
-    const NewRoot = require('./Root').default;
-    render(
-      <AppContainer>
-        <NewRoot />
-      </AppContainer>,
-      document.getElementById('root')
-    );
-  });
+    module.hot.accept('./root', () => {
+        const NewRoot = require('./root').default;
+        render(
+            <Provider store={store}>
+                <AppContainer>
+                    <NewRoot />
+                </AppContainer>
+            </Provider>,
+            document.getElementById('root')
+        );
+    });
 }

@@ -5,8 +5,7 @@ class Chat extends React.Component {
   render () {
     return (
       <div>
-     		<p>hello Chat</p>
-        <Link to="/">index</Link>
+     	<p>hello Chat</p>
       </div>
     )
   }

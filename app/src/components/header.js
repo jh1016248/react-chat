@@ -1,12 +1,19 @@
-import React, { render } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 
-let Headere = React.createClass({
+class Header extends Component {
+    static propTypes = {
+        themeColor: PropTypes.string
+    }
+    constructor() {
+        super()
+    }
     render() {
         return (
-          <div>header components</div>
-        );
+          <div style={{color: this.props.themeColor}}>header components</div>
+        )
     }
-});
+}
 
 
-export default Headere;
+export default Header
