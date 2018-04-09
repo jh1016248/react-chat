@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Route from './router/index'
 class Root extends React.Component{
   render () {
@@ -8,4 +8,4 @@ class Root extends React.Component{
   }
 } 
 
-export default Root;
+export default Root

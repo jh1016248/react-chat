@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
-import { Input, Icon, Button } from 'antd';
-import { browserHistory } from 'react-router';
+import React, { Component } from 'react'
+import { Link } from 'react-router'
+import { Input, Icon, Button } from 'antd'
+import { browserHistory } from 'react-router'
 
 class Register extends Component {
     constructor() {

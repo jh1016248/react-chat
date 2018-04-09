@@ -1,4 +1,4 @@
-const CHANGE_THEMECOLOR = 'CHANGE_THEMECOLOR';
+const CHANGE_THEMECOLOR = 'CHANGE_THEMECOLOR'
 
 let ThemeColor = (state, action) => {
     if(!state) {
@@ -7,11 +7,11 @@ let ThemeColor = (state, action) => {
         }
     }
     switch (action.type) {
-        case CHANGE_THEMECOLOR: 
+        case CHANGE_THEMECOLOR:
             return {
                 themeColor: action.color
             }
-        default: 
+        default:
             return state
     }
 }

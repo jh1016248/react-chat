@@ -1,8 +1,8 @@
-import React, { render } from 'react';
-import { Router, IndexRoute, Link, Route, browserHistory, hashHistory } from 'react-router';
-import Index from '../pages/index';
-import Register from '../pages/register';
-import Login from '../pages/login';
+import React, { render } from 'react'
+import { Router, IndexRoute, Link, Route, browserHistory, hashHistory } from 'react-router'
+import Index from '../pages/index'
+import Register from '../pages/register'
+import Login from '../pages/login'
 
 class App extends React.Component {
 	constructor(props) {
@@ -17,8 +17,8 @@ class App extends React.Component {
     updateBackground() {
         let pageW = window.outerWidth,
             pageH = window.outerHeight,
-            bgIndex = 9;
-            // bgIndex = Math.floor((Math.random() * 9 ) + 1);
+            bgIndex = 8
+            // bgIndex = Math.floor((Math.random() * 9 ) + 1)
         this.setState({
             bgIndex,
             pageW,
@@ -42,7 +42,7 @@ class App extends React.Component {
                 }}></div>
 				{this.props.children}
 			</div>
-		);
+		)
 	}
 }
 
@@ -64,8 +64,8 @@ class router extends React.Component {
 					<Route path="/main" component={Index}></Route>
 				</Route>
 			</Router>
-		);
+		)
 	}
 }
 
-export default router;
+export default router

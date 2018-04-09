@@ -1,5 +1,5 @@
-import React from 'react';
-import {Link} from 'react-router';
+import React from 'react'
+import {Link} from 'react-router'
 
 class Chat extends React.Component {
   render () {

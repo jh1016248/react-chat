@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
-import { Input, Icon, Button } from 'antd';
-import { browserHistory } from 'react-router';
-import './styles/login.less';
+import React, { Component } from 'react'
+import { Link } from 'react-router'
+import { Input, Icon, Button } from 'antd'
+import { browserHistory } from 'react-router'
 class Login extends Component {
     constructor() {
         super()
@@ -15,7 +14,6 @@ class Login extends Component {
     submit() {
         let userName = this.refs.username.refs.input.value,
             password = this.refs.password.refs.input.value;
-
         browserHistory.push('/main')
     }
 
