@@ -12,16 +12,18 @@ class MessagePanel extends Component {
         super()
     }
 
-    componentWillMount() {
+    componentDidUpdate() {
         console.log(this.props.messageList)
     }
-    
+
+
     render() {
+        let messageList = this.props.messageList
         return (
             <div className="message-panel">
                 <div className="message-wrap mini-scroll">
                     {
-                        this.props.messageList.length && this.props.messageList.map((item, index) => {
+                        messageList.length && messageList.map((item, index) => {
                             return (
                                 <Message message={item} key={index}/>
                             )
@@ -35,7 +37,7 @@ class MessagePanel extends Component {
 
 const mapStateToProps = state => {
     return {
-        messageList
+        messageList: state.messageList
     }
 }
 export default MessagePanel
