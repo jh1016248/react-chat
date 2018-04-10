@@ -5,7 +5,7 @@ import './styles/messagePanel.less'
 
 class MessagePanel extends Component {
     static propTypes = {
-        messageList: PropTypes.object
+        messageList: PropTypes.array,
     }
     
     constructor(){
@@ -13,15 +13,16 @@ class MessagePanel extends Component {
     }
 
     componentDidUpdate() {
-        console.log(this.props.messageList)
+        let wrapEl = this.refs.messageWrap
+        let height = wrapEl.scrollHeight
+        wrapEl.scrollTop = height
     }
-
 
     render() {
         let messageList = this.props.messageList
         return (
-            <div className="message-panel">
-                <div className="message-wrap mini-scroll">
+            <div className="message-panel" ref="panelWrap">
+                <div className="message-wrap mini-scroll" ref="messageWrap">
                     {
                         messageList.length && messageList.map((item, index) => {
                             return (
@@ -35,9 +36,4 @@ class MessagePanel extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        messageList: state.messageList
-    }
-}
 export default MessagePanel

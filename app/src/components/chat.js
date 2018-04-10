@@ -8,6 +8,9 @@ import InputPanel from './inputPanel'
 import './styles/chat.less'
 
 class Chat extends Component {
+    static propTypes = {
+        handelSubmitMessage: PropTypes.func
+    }
     constructor(){
         super()
     }
@@ -18,7 +21,7 @@ class Chat extends Component {
                 <ChatPanelHeader/>
                 <MessagePanel/>
                 <Toolbar/>
-                <InputPanel/>
+                <InputPanel handelSubmitMessage={this.props.handelSubmitMessage}/>
             </div>
         )
     }

@@ -14,7 +14,7 @@ let MessageList = (state, action) => {
             }
         case ADD_MESSAGE:
             return {
-                messageList: action.item
+                messageList: [...state.messageList, action.item]
             }
         default:
             return state

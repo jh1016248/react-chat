@@ -5,7 +5,7 @@ import MessagePannel from '../components/messagePanel'
 
 class MessageList extends Component {
     static propTypes = {
-        messageList: PropTypes.object,
+        messageList: PropTypes.array,
         initMessageList: PropTypes.func
     }    
 
@@ -39,14 +39,14 @@ class MessageList extends Component {
 
     render() {
         return (
-            <MessagePannel messageList={this.props.messageList}/>
+            <MessagePannel messageList={this.props.messageList} themeColor={this.props.themeColor}/>
         )
     }
 }
 
 const mapStateToProps = state => {
     return {
-        messageList: state.messageList
+        messageList: state.messageList.messageList,
     }
 }
 

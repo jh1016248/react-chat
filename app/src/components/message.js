@@ -14,7 +14,6 @@ class Message extends Component {
 
     render() {
         const message = this.props.message
-        console.log(message)
         return (
             <div className={ message.host ? 'message host' : 'message' }>
                 <img src={ message.avatar } />

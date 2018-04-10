@@ -7,13 +7,13 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     // The entry file. All your src roots fromn here.
     entry: [
-        path.join(__dirname, 'src/final/index.js')
+        path.join(__dirname, 'src/index.js')
     ],
     // Where you want the output to go
     output: {
         path: path.join(__dirname, '/dist/'),
         filename: '[name]-[hash].min.js',
-        publicPath: '/'
+        publicPath: ''
     },
     plugins: [
         // webpack gives your modules and chunks ids to identify them. Webpack can vary the
@@ -45,12 +45,15 @@ module.exports = {
     module: {
         loaders: [
             {
-              test: /\.js$/,
-              exclude: /node_modules/,
-              loader: "babel-loader",
-              query:
-                {
-                  presets:['react','es2015']
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: "babel-loader",
+                query:{
+                    presets:['react','es2015','stage-0'],
+                    plugins:[
+                        ['import', { libraryName: 'antd', style: 'css' }]
+                    ],
+                    cacheDirectory: true
                 }
             },
             {

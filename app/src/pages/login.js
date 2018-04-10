@@ -1,20 +1,31 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { Input, Icon, Button } from 'antd'
-import { browserHistory } from 'react-router'
+import { hashHistory } from 'react-router'
 class Login extends Component {
+    static propTypes = {
+        user: PropTypes.object,
+        setUserInfo: PropTypes.func,
+    }
+    
     constructor() {
         super()
-        this.state = {
-            userName: '',
-            password: '',
-        }
     }
 
     submit() {
         let userName = this.refs.username.refs.input.value,
-            password = this.refs.password.refs.input.value;
-        browserHistory.push('/main')
+            password = this.refs.password.refs.input.value
+
+        let userInfo = {
+            id: 1,
+            name: 'jh',
+            avatar: 'static/images/avatar/2.jpg'
+        }
+        
+        this.props.setUserInfo(userInfo)
+        hashHistory.push('/main')
     }
 
     render() {
@@ -53,4 +64,20 @@ class Login extends Component {
     }
 }
 
-export default Login
+let mapStateToProps = state => {
+    return {
+    }
+}
+
+let mapDispatchToProps = dispatch => {
+    return {
+        setUserInfo: (user) => {
+            dispatch({
+                type: 'SET_USER_INFO',
+                user
+            })
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

@@ -8,7 +8,7 @@ const ButtonGroup = Button.Group;
 
 class Header extends Component {
     static propTypes = {
-        
+        user: PropTypes.object
     }
     constructor() {
         super()
@@ -32,7 +32,7 @@ class Header extends Component {
                 </div>
                 <div className="user-pannel">
                     <a href="">
-                        <img src="static/images/avatar/1.jpg"/>
+                        <img src={this.props.user.avatar}/>
                     </a>
                 </div>
             </div>

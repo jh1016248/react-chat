@@ -1,5 +1,5 @@
 import React, { render } from 'react'
-import { Router, IndexRoute, Link, Route, browserHistory, hashHistory } from 'react-router'
+import { Router, IndexRoute, Link, Route, hashHistory } from 'react-router'
 import Index from '../pages/index'
 import Register from '../pages/register'
 import Login from '../pages/login'
@@ -10,27 +10,33 @@ class App extends React.Component {
         this.state = {
             bgIndex: 1,
             pageW: 0, 
-            pageH: 0
+            pageH: 0,
+            changeBackgroundTimer: null,
         }
     }
 
     updateBackground() {
         let pageW = window.outerWidth,
             pageH = window.outerHeight,
-            bgIndex = 8
-            // bgIndex = Math.floor((Math.random() * 9 ) + 1)
+            // bgIndex = 8
+            bgIndex = Math.floor((Math.random() * 4) + 1)
         this.setState({
             bgIndex,
             pageW,
-            pageH
+            pageH,
+            changeBackgroundTimer: setTimeout(() => {
+                this.updateBackground()
+            }, 30 * 1000)
         })
-        // setTimeout(() => {
-        //     this.updateBackground()
-        // }, 20 * 1000)
+        
     }
 
     componentDidMount() {
         this.updateBackground()
+    }
+
+    componentWillUnMount() {
+        clearTimeout(this.state.changeBackgroundTimer)
     }
 
 	render() {
@@ -56,7 +62,7 @@ class router extends React.Component {
     
 	render() {
 		return (
-			<Router history={browserHistory}>
+			<Router history={hashHistory}>
 				<Route path="/" component={App}>
 					<IndexRoute component={Login} />
 					<Route path="/login" component={Login}></Route>

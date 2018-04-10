@@ -1,7 +1,7 @@
 {
-  "name": "react-music-player",
+  "name": "react-chat",
   "version": "1.0.0",
-  "description": "music player build with react, redux and react-router with the help of webpack.",
+  "description": "react-chat",
   "main": "index.js",
   "scripts": {
     "test": "",
@@ -14,12 +14,8 @@
     "react",
     "redux"
   ],
-  "author": "musiq",
+  "author": "jh",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xiaolin3303/react-music-player"
-  },
   "dependencies": {
     "antd": "^2.13.8",
     "babel-plugin-import": "^1.6.2",

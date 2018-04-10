@@ -4,8 +4,10 @@ module.exports = function(app){
 	app.post("/api/user/register", function (req, res){
 		let nickName = req.body.userName,
 			password = req.body.password;
+        console.log(nickName)
 		if(nickName && password){
 			User.find({"nickName" : nickName}, function (err, user){
+                console.log(user)
 				if(!err){
 					if(user.length > 0){
 						res.send({

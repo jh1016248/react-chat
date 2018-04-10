@@ -5,7 +5,7 @@ import './styles/inputPanel.less'
 
 class InputPanel extends Component {
     static propTypes = {
-
+        handelSubmitMessage: PropTypes.func
     }
     
     constructor(){
@@ -16,6 +16,7 @@ class InputPanel extends Component {
         let msg = this.refs.message.refs.input.value
         console.log(msg)
         this.refs.message.refs.input.value = ''
+        this.props.handelSubmitMessage(msg)
     }
     
     render() {

@@ -1,6 +1,5 @@
 module.exports = function(app){
-	app.get("/api/other/getInfo", function (req, res){
-		console.log(1)
+	app.post("/api/other/getInfo", function (req, res){
 		res.send({
 			ret: 1,
 			msg: '哈哈哈'
