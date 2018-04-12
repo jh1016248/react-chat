@@ -3,13 +3,50 @@
 @@include('./common/header.html', {"title": "景艺园林"})
 <body>
     @@include('./common/nav.html')
-    
-    公司新闻
-
+    <img src="../src/images/banner/o-banner3.jpg" class="o-banner" alt="">
+    <div class="wrap part">
+        <div class="m-nav">
+            <div class="title">资讯中心</div>
+            <ul>
+                <li class="active"><a href="gsxw.html">公司新闻</a></li>
+                <li><a href="whdt.html">文化动态</a></li>
+                <li><a href="ldhd.html">领导活动</a></li>
+                <li><a href="hyxw.html">行业新闻</a></li>
+                <li><a href="ywkz.html">业务扩展</a></li>
+                <li><a href="qtxw.html">其他新闻</a></li>
+            </ul>
+        </div>
+        <ul class="part3-list">
+            <li>
+                <a href="newsdetail.html"><img src="../src/images/9.jpg" alt=""></a>
+                <h3><a href="newsdetail.html">热烈庆祝“桂阳县方元镇....</a></h3>
+                <p class="time">2017-02-19</p>
+                <p>2017年02月18日，阳光明媚，这一天对于燕塘来说是一个特别的日子，因为燕塘人民盼...</p>
+            </li>
+            <li>
+                <a href="newsdetail.html"><img src="../src/images/10.jpg" alt=""></a>
+                <h3><a href="newsdetail.html">热烈庆祝“桂阳县方元镇....</a></h3>
+                <p class="time">2017-02-19</p>
+                <p>2017年02月18日，阳光明媚，这一天对于燕塘来说是一个特别的日子，因为燕塘人民盼...</p>
+            </li>
+            <li>
+                <a href="newsdetail.html"><img src="../src/images/11.jpg" alt=""></a>
+                <h3><a href="newsdetail.html">热烈庆祝“桂阳县方元镇....</a></h3>
+                <p class="time">2017-02-19</p>
+                <p>2017年02月18日，阳光明媚，这一天对于燕塘来说是一个特别的日子，因为燕塘人民盼...</p>
+            </li>
+            <li>
+                <a href="newsdetail.html"><img src="../src/images/12.jpg" alt=""></a>
+                <h3><a href="newsdetail.html">热烈庆祝“桂阳县方元镇....</a></h3>
+                <p class="time">2017-02-19</p>
+                <p>2017年02月18日，阳光明媚，这一天对于燕塘来说是一个特别的日子，因为燕塘人民盼...</p>
+            </li>
+        </ul>
+    </div>
     @@include('./common/footer.html')
     @@include('./common/script.html')
     <script>
-        seajs.use(['modules/gsxw'], function(view){
+        seajs.use(['modules/index'], function(view){
 			view.init();
 		});
     </script>

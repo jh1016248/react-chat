@@ -3,13 +3,19 @@
 @@include('./common/header.html', {"title": "景艺园林"})
 <body>
     @@include('./common/nav.html')
-    
-    资质荣誉
-
+    <div class="bg">
+        <div class="wrap card">
+            <img src="../src/images/banner/o-banner2.jpg" class="o-banner" alt="">
+            <div class="page-honor">
+                <img src="../src/images/honor1.jpg" alt="">
+                <img src="../src/images/honor2.jpg" alt="">
+            </div>
+        </div>
+    </div>
     @@include('./common/footer.html')
     @@include('./common/script.html')
     <script>
-        seajs.use(['modules/honor'], function(view){
+        seajs.use(['modules/index'], function(view){
 			view.init();
 		});
     </script>

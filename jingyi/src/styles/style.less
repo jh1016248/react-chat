@@ -209,9 +209,10 @@
 .bg{
     padding: 35px 0 50px;
     background: url(../images/icon/bg.png) repeat;
-    .o-banner{
-        display: block;
-    }
+}
+.o-banner{
+    width: 100%;
+    display: block;
 }
 .card{
     overflow: hidden;
@@ -320,4 +321,120 @@
             text-indent: 2em;
         }
     }
+}
+
+.page-honor{
+    padding: 65px 105px;
+}
+
+.m-nav{
+    margin: 40px 0;
+    background: #ebebeb;
+    height: 60px;
+    .title{
+        line-height: 60px;
+        display: inline-block;
+        width: 166px;
+        background: #6d841e; 
+        color: #fff;
+        text-align: center;
+        font-size: 24px;
+    }
+    ul{
+        float: right;
+        font-size: 0;
+        li{
+            height: 56px;
+            line-height: 56px;
+            display: inline-block;
+            margin-right: 48px;
+            padding: 0 2px;
+            a{
+                color: #333;
+                font-size: 16px;
+            }
+            &.active{
+                border-bottom: 4px solid #6d841e;
+                a{
+                    color: #6d841e;
+                }
+            }
+        }
+    }
+}
+
+.detial-wrap{
+    min-height: 568px;
+    margin-top: 86px;
+    .title{
+        text-align: center;
+        border-bottom: 4px solid #f5f5f5;
+        margin-bottom: 40px;
+        h3{
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+        p{
+            font-size: 18px;
+            color: #999;
+            margin-bottom: 50px;
+        }
+    }
+    .container{
+        p{
+            font-size: 18px;
+            line-height: 36px;
+            margin-bottom: 60px;
+        }
+    }
+}
+
+.pagin{
+    margin-bottom: 100px;
+    p{
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    a{
+        color: #6d841e
+    }
+}
+
+.page-contacts{
+    padding-top: 42px;
+    margin-bottom: 40px;
+    h2{
+        font-size: 24px;
+        color: #6d841e;
+        font-weight: normal;
+        margin-bottom: 42px;
+    }
+    .list{
+        margin-bottom: 62px;
+        font-size: 0;
+        .item{
+            width: 230px;
+            height: 270px;
+            text-align: center;
+            display: inline-block;
+            background: #fff;
+            box-shadow: 0 0 7px rgba(0,0,0,.4);
+            margin-left: 120px;
+            margin-right: 40px;
+            img{
+                margin: 42px 0 36px;
+            }
+            p{
+                font-size: 18px;
+                margin-bottom: 18px;
+                &.c-green{
+                    color: #6d841e;
+                }
+            }
+        }
+    }
+    > p{
+        line-height: 36px;
+    }
+
 }

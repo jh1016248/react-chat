@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+@@include('./common/header.html', {"title": "景艺园林"})
+<body>
+    @@include('./common/nav.html')
+    <img src="../src/images/banner/o-banner3.jpg" class="o-banner" alt="">
+    <div class="wrap part">
+        <div class="m-nav">
+            <div class="title">资讯中心</div>
+            <ul>
+                <li class="active"><a href="gsxw.html">公司新闻</a></li>
+                <li><a href="whdt.html">文化动态</a></li>
+                <li><a href="ldhd.html">领导活动</a></li>
+                <li><a href="hyxw.html">行业新闻</a></li>
+                <li><a href="ywkz.html">业务扩展</a></li>
+                <li><a href="qtxw.html">其他新闻</a></li>
+            </ul>
+        </div>
+        <div class="detial-wrap">
+            <div class="title">
+                <h3>郴州市将完善生态园林城市管理体系</h3>
+                <p>时间：2017-04-23 16:01:58 &nbsp;&nbsp;&nbsp;点击：<span style="color: #6d841e">144次</span></p>
+            </div>
+            <div class="container">
+                <p>根据市委办创建国家生态园林城市工作方案的要求，郴州要在2015年底初步建成数字园林平台，监管范围覆盖率2015年达50%、2016年达80%、2017年达100%，逐步建立起适应国家生态园林城市要求的园林绿化管理体制机制。</p>
+                <p>国家生态园林城市对郴州的生态园林建设提出了更高的要求，我市将完善生态园林城市综合管理体系，大力推进城市园林绿化管理信息化建设，通过遥感测试，对城区公园绿地、生产绿地、防护绿地、附属绿地、其他绿地等城市五大绿地进行调查，加快建立城市园林绿化数字信息库、信息发布与社会服务信息共享平台，对城市园林绿化建设和管理实施动态监管。</p>
+                <p>我市还将提高城市园林绿化科研能力，组建科研服务中心（园林科研基地、数字园林平台、园林图审中心）和园林质检中心，强化园林施工质量事前、事中、事后监管。严格园行政审批和绿线管控，按照住建部《城市绿线管理办法》和《城市蓝线管理办法》要求划定绿线、蓝线，并在至少两种以上的公共媒体向社会公布。同时，建立健全园林绿化工程施工管理、养护管理制度以及“绿色图章”管理、控制大树移栽、防治外来物种入侵、古树名木保护等各项管理制度，建立园林绿化联合执法和信息共享机制，加大对违法占绿、毁绿行为的查处力度。</p>
+            </div>
+            <div class="pagin">
+                <p>上一篇：没有了</p>
+                <p>下一篇：<a href="">热烈庆祝“桂阳县方元镇燕塘中心学校公租房配套基础设施道路改造工程”顺利开工</a></p>
+            </div>
+        </div>
+    </div>
+    @@include('./common/footer.html')
+    @@include('./common/script.html')
+    <script>
+        seajs.use(['modules/newsdetail'], function(view){
+			view.init();
+		});
+    </script>
+</body>
+</html>
