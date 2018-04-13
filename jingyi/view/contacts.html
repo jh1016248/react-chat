@@ -14,7 +14,7 @@
         <div class="header-nav">
             <ul>
                 <li name="index">
-                    <a href="/view">首页</a>
+                    <a href="index.html">首页</a>
                 </li>
                 <li name="about">
                     <a href="overview.html">关于景艺</a>
@@ -117,9 +117,29 @@
         </div>
     </div>
 </div>
+
+<div id="pointTip">
+    <a href=""><img src="../src/images/icon/kefu.png" alt=""></a>
+    <a href=""><img src="../src/images/icon/qq.png" alt=""></a>
+    <a href="javascript:;" style="display: none" id="toTop"><img src="../src/images/icon/arrow-top.png" alt=""><p>返回顶部</p></a>
+</div>
     <script src="../src/js/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="../src/js/libs/seajs/3.0.0/sea.js"></script>
 <script src="../src/js/sea.config.js"></script>
+<script>
+    $(window).on("scroll", function (){
+        var scrollTop = $(window, "body").scrollTop();
+        if(scrollTop >= 1000) {
+            $("#toTop").stop(true,true).fadeIn(300);
+        }
+        else{
+            $("#toTop").stop(true,true).fadeOut(300);
+        }
+    })
+    $("#toTop").on("click", function (){
+        $('html,body').animate({"scrollTop": "0px"}, 300)
+    })
+</script>
     <script>
         seajs.use(['modules/contacts'], function(view){
 			view.init();

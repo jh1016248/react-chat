@@ -13,6 +13,10 @@ h1,h2,h3,h4,h5,p{
     overflow: hidden;
 }
 
+img{
+    border: none;
+}
+
 body{
     font-family: '微软雅黑';
     font-size: 14px;
@@ -160,6 +164,37 @@ ul, li {
         li + li h3{
             border-left: 1px solid #000;
         }
+    }
+}
+
+#pointTip{
+    position: fixed;
+    bottom: 100px;
+    right: 94px;
+    a{
+        display: block;
+        width: 60px;
+        height: 60px;
+        border: 2px solid #019149;
+        background: #fff;
+        text-align: center;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        img{
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 12px;
+        }
+        p{
+            margin-top: 14px;
+            font-size: 12px;
+            color: #019149;
+        }
+    }
+    #toTop{
+        position: absolute;
+        bottom: -72px;
+        right: 0;
     }
 }
 
