@@ -8,12 +8,12 @@
         <div class="m-nav">
             <div class="title">资讯中心</div>
             <ul>
-                <li class="active"><a href="gsxw.html">公司新闻</a></li>
-                <li><a href="whdt.html">文化动态</a></li>
-                <li><a href="ldhd.html">领导活动</a></li>
-                <li><a href="hyxw.html">行业新闻</a></li>
-                <li><a href="ywkz.html">业务扩展</a></li>
-                <li><a href="qtxw.html">其他新闻</a></li>
+                <li name="gsxw"><a href="gsxw.html">公司新闻</a></li>
+                <li name="whdt"><a href="whdt.html">文化动态</a></li>
+                <li name="ldhd"><a href="ldhd.html">领导活动</a></li>
+                <li name="hyxw"><a href="hyxw.html">行业新闻</a></li>
+                <li name="ywkz"><a href="ywkz.html">业务扩展</a></li>
+                <li name="qtxw"><a href="qtxw.html">其他新闻</a></li>
             </ul>
         </div>
 
@@ -25,7 +25,7 @@
     @@include('./common/script.html')
     <script>
         seajs.use(['modules/whdt'], function(view){
-			view.init();
+			view.init('whdt');
 		});
     </script>
 </body>

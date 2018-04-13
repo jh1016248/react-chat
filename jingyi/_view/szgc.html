@@ -8,11 +8,11 @@
         <div class="m-nav">
             <div class="title">项目案例</div>
             <ul>
-                <li class="active"><a href="yllh.html">园林景观绿化</a></li>
-                <li><a href="zzjg.html">住宅景观</a></li>
-                <li><a href="yljz.html">园林建筑</a></li>
-                <li><a href="szgc.html">市政工程</a></li>
-                <li><a href="jgghsj.html">景观规划设计</a></li>
+                <li name="yllh"><a href="yllh.html">园林景观绿化</a></li>
+                <li name="zzjg"><a href="zzjg.html">住宅景观</a></li>
+                <li name="yljz"><a href="yljz.html">园林建筑</a></li>
+                <li name="szgc"><a href="szgc.html">市政工程</a></li>
+                <li name="jgghsj"><a href="jgghsj.html">景观规划设计</a></li>
             </ul>
         </div>
         <ul class="part3-list">
@@ -47,7 +47,7 @@
     @@include('./common/script.html')
     <script>
         seajs.use(['modules/szgc'], function(view){
-			view.init();
+			view.init('szgc');
 		});
     </script>
 </body>

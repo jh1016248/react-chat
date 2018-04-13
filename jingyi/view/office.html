@@ -14,16 +14,16 @@
         <div class="header-nav">
             <ul>
                 <li name="index">
-                    <a href="">首页</a>
+                    <a href="/view">首页</a>
                 </li>
                 <li name="about">
                     <a href="overview.html">关于景艺</a>
                     <div class="child">    
-                        <a href="overview.html">公司概况</a>
-                        <a href="chairman.html">董事长简历</a>
-                        <a href="teaminfo.html">团队成员</a>
-                        <a href="framework.html">公司架构</a>
-                        <a href="office.html">办公环境</a>
+                        <a href="overview.html" name="overview">公司概况</a>
+                        <a href="chairman.html" name="chairman">董事长简历</a>
+                        <a href="teaminfo.html" name="teaminfo">团队成员</a>
+                        <a href="framework.html" name="framework">公司架构</a>
+                        <a href="office.html" name="office">办公环境</a>
                     </div>
                 </li>
                 <li name="culture">
@@ -35,22 +35,22 @@
                 <li name="information">
                     <a href="gsxw.html">资讯中心</a>
                     <div class="child">
-                        <a href="gsxw.html">公司新闻</a>
-                        <a href="whdt.html">文化动态</a>
-                        <a href="ldhd.html">领导活动</a>
-                        <a href="hyxw.html">行业新闻</a>
-                        <a href="ywkz.html">业务扩展</a>
-                        <a href="qtxw.html">其他新闻</a>
+                        <a href="gsxw.html" name="gsxw">公司新闻</a>
+                        <a href="whdt.html" name="whdt">文化动态</a>
+                        <a href="ldhd.html" name="ldhd">领导活动</a>
+                        <a href="hyxw.html" name="hyxw">行业新闻</a>
+                        <a href="ywkz.html" name="ywkz">业务扩展</a>
+                        <a href="qtxw.html" name="qtxw">其他新闻</a>
                     </div>
                 </li>
                 <li name="case">
                     <a href="yllh.html">项目案例</a>
                     <div class="child">
-                        <a href="yllh.html">园林景观绿化</a>
-                        <a href="zzjg.html">住宅景观</a>
-                        <a href="yljz.html">园林建筑</a>
-                        <a href="szgc.html">市政工程</a>
-                        <a href="jgghsj.html">景观规划设计</a>
+                        <a href="yllh.html" name="yllh">园林景观绿化</a>
+                        <a href="zzjg.html" name="zzjg">住宅景观</a>
+                        <a href="yljz.html" name="yljz">园林建筑</a>
+                        <a href="szgc.html" name="szgc">市政工程</a>
+                        <a href="jgghsj.html" name="jgghsj">景观规划设计</a>
                     </div>
                 </li>
                 <li name="jobs">
@@ -106,8 +106,8 @@
 <script src="../src/js/libs/seajs/3.0.0/sea.js"></script>
 <script src="../src/js/sea.config.js"></script>
     <script>
-        seajs.use(['modules/index'], function(view){
-			view.init();
+        seajs.use(['modules/office'], function(view){
+			view.init('office');
 		});
     </script>
 </body>

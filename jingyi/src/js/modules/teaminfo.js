@@ -1,5 +1,6 @@
 define(function(require, exports) {
-	exports.init = function() {
-        $(".header-nav").find("li[name='index']").addClass("active");
+	exports.init = function(name) {
+        $(".header-nav").find("li[name='about']").addClass("active");
+        $(".child a[name='" + name + "']").addClass("active");
 	}
 });
