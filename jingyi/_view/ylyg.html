@@ -3,14 +3,45 @@
 @@include('./common/header.html', {"title": "景艺园林"})
 <body>
     @@include('./common/nav.html')
-    
-    园林员工
-
+    <img src="../src/images/banner/o-banner6.jpg" class="o-banner" alt="">
+    <div class="wrap part">
+        <div class="m-nav">
+            <div class="title">资讯中心</div>
+            <ul>
+                <li name="ylsjzj"><a href="ylsjzj.html">园林设计总监</a></li>
+                <li name="yljgsjs"><a href="yljgsjs.html">园林景观设计师</a></li>
+                <li name="tjsgdw"><a href="tjsgdw.html">土建施工队伍</a></li>
+                <li name="ylyg"><a href="ylyg.html">园林员工</a></li>
+            </ul>
+        </div>
+        <div class="page-jobs">
+            <h3 class="title">园林施工员</h3>
+            <div class="left">
+                <p class="mb20">工作性质：全职招聘人数：5-10</p>
+                <p class="mb20">工作地点：郴州发布时间：2016-12-20</p>
+                <p class="mb20">性别要求：不限要求年龄：不限</p>
+                <p class="mb60">要求学历：大专以上提供月薪：面议</p>
+                <p>职位要求：</p>
+                <p>1、园林、土木工程、建筑、工程管理、造价工程、生态或环境工程等相关专业大专以上学历；</p>
+                <p>2、了解园林、土建工程施工及验收规范，熟悉工程施工管理的基本程序；</p>
+                <p>3、能够服从公司统一安排，适应外地项目工作；</p>
+                <p>4、具有团队合作精神；</p>
+            </div>
+            <div class="right">
+                <a href="applying.html" class="btn" style="margin-top: 0;">应聘此岗位</a>
+                <p>其他应聘方式：</p>
+                <p>1. 将简历发送至招聘电子邮箱：<span>hr@okjyyl.com</span></p>
+                <p>2. 在邮件标题处注明应聘岗位及姓名，如“应聘设计工程经理+李XX”。</p>
+                <p>3. 简历以附件形式发送。</p>
+                <p>4. 如有疑问，可来电咨询，王先生。</p>
+            </div>
+        </div>
+    </div>
     @@include('./common/footer.html')
     @@include('./common/script.html')
     <script>
         seajs.use(['modules/ylyg'], function(view){
-			view.init();
+			view.init('ylyg');
 		});
     </script>
 </body>
