@@ -70,9 +70,9 @@ ul, li {
                 background: #fff;
                 margin-left: -63px;
                 border: 1px solid #019149;
-                padding: 0 22px;
                 box-sizing: border-box;
                 a{
+                    position: relative;
                     display: block;
                     height: 48px;
                     line-height: 48px;
@@ -82,9 +82,16 @@ ul, li {
                     &:hover, &.active{
                         color: #019149;
                     }
-                }
-                a + a{
-                    border-top: 1px solid #e0e0e0;
+                    &:after{
+                        content: ' ';
+                        position: absolute;
+                        height: 1px;
+                        width: 80px;
+                        background: #e0e0e0;
+                        bottom: 0;
+                        left: 50%;
+                        margin-left: -40px;
+                    }
                 }
                 &:after{
                     content: ' ';
@@ -96,6 +103,9 @@ ul, li {
                     top: -11px;
                     left: 50%;
                     margin-left: -5px;
+                }
+                &:last-child:after{
+                    display: none;
                 }
             } 
             &.active{
