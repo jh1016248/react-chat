@@ -3,7 +3,7 @@ var mongoose = require('./db.js'),
 
 var CountSchema = new Schema({
     tag: {type: String},
-    count: {type: Number}
+    index: {type: Number}
 });
 
-module.exports = mongoose.model('count', CountSchema);
+module.exports = mongoose.model('counts', CountSchema);

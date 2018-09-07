@@ -2,17 +2,17 @@ const User = require("../module/user")
 const Count = require("../module/count")
 module.exports = function(app){
 	app.post("/api/user/register", function (req, res){
-		let nickName = req.body.userName,
+		let loginName = req.body.loginName,
 			password = req.body.password;
         console.log(nickName)
 		if(nickName && password){
-			User.find({"nickName" : nickName}, function (err, user){
+			User.find({"loginName" : loginName}, function (err, user){
                 console.log(user)
 				if(!err){
 					if(user.length > 0){
 						res.send({
 							state: 2,
-							msg: '改昵称已被占用~'
+							msg: '该昵称已被占用~'
 						})
 					}
 					else{
@@ -20,7 +20,7 @@ module.exports = function(app){
 							var ind = count + 1;
 							var user = new User({
 								id: ind,
-								nickName: nickName,
+								loginName: loginName,
 								password: password,
 								avatar: ""
 							})

@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import { Input, Icon, Button } from 'antd'
-import { browserHistory } from 'react-router'
-import { register } from '../api/'
 
 class Register extends Component {
     constructor() {
@@ -16,11 +14,14 @@ class Register extends Component {
     submit() {
         let userName = this.refs.username.refs.input.value,
             password = this.refs.password.refs.input.value;
-            register(userName, password)
-                .then(res => {
-                    console.log(res)
-                })
-        // browserHistory.push('/main')
+            // register(userName, password)
+            //     .then(res => {
+            //         console.log(res)
+            //     })
+    }
+
+    componentWillMount() {
+        console.log($client)
     }
 
     render() {

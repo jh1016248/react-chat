@@ -3,10 +3,8 @@ var mongoose = require('./db.js'),
 
 var MusicSchema = new Schema({
 	id: {type: Number},
-    musicId: {type: Number},
-    name: { type: String },
+    nickName: { type: String },
     picUrl: { type: String },
-    singer: { type: String },
 });
 
 module.exports = mongoose.model('musics', MusicSchema);
