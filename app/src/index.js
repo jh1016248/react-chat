@@ -13,8 +13,6 @@ import './asset/css/common.less'
 import './asset/css/index.less'
 import './asset/js/jUI.less'
 
-
-
 const store = createStore(reducer)
 
 render(

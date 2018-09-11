@@ -1,8 +1,10 @@
 import axios from 'axios';
 
-let apiUrl = 'http://localhost:3001';
+let apiUrl = 'http://localhost:3000';
 axios.interceptors.request.use(function (config) {
     config.url = apiUrl + config.url;
+    config.headers.token = localStorage.token
+    console.log(config)
     return config
 })
 
@@ -73,5 +75,5 @@ function fileToBase64(file, cb) {
 export default {
     getData,
     postData,
-    fileToBase64
+    fileToBase64,
 }

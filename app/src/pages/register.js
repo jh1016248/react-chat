@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
-import { Input, Icon, Button } from 'antd'
+import { Link, hashHistory } from 'react-router'
+import { Input, Icon, Button, message } from 'antd'
 
 class Register extends Component {
     constructor() {
@@ -10,14 +10,17 @@ class Register extends Component {
             password: '',
         }
     }
-
+    
     submit() {
-        let userName = this.refs.username.refs.input.value,
+        let loginName = this.refs.username.refs.input.value,
             password = this.refs.password.refs.input.value;
-            // register(userName, password)
-            //     .then(res => {
-            //         console.log(res)
-            //     })
+        $client.postData($client.API.register, {loginName, password}).then(res => {
+            message.info(res.message);
+            if(res.code === 1000) {
+                // this.router
+                hashHistory.push('/login')
+            }
+        })
     }
 
     componentWillMount() {

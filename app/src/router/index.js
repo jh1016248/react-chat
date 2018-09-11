@@ -1,10 +1,16 @@
 import React, { render } from 'react'
 import { Router, IndexRoute, Link, Route, hashHistory } from 'react-router'
+import { connect } from 'react-redux'
 import Index from '../pages/index'
 import Register from '../pages/register'
+import PropTypes from 'prop-types'
 import Login from '../pages/login'
-
+import { message } from 'antd';
 class App extends React.Component {
+    static propTypes = {
+        user: PropTypes.object,
+        setUserInfo: PropTypes.func,
+    }
 	constructor(props) {
         super(props)
         this.state = {
@@ -18,20 +24,31 @@ class App extends React.Component {
     updateBackground() {
         let pageW = window.outerWidth,
             pageH = window.outerHeight,
-            // bgIndex = 8
-            bgIndex = Math.floor((Math.random() * 4) + 1)
+            bgIndex = 8
+            // bgIndex = Math.floor((Math.random() * 4) + 1)
         this.setState({
-            bgIndex,
+            // bgIndex,
             pageW,
             pageH,
-            changeBackgroundTimer: setTimeout(() => {
-                this.updateBackground()
-            }, 30 * 1000)
+            // changeBackgroundTimer: setTimeout(() => {
+            //     this.updateBackground()
+            // }, 30 * 1000)
         })
-        
     }
 
     componentDidMount() {
+        let token = localStorage.token;
+        if(token && token != '') {
+            $client.getData($client.API.getCurrentUser).then(res => {
+                if(res.code == 1000) {
+                    this.props.setUserInfo(res.data)
+                    hashHistory.push('/main')
+                }
+                else{
+                    message.info(res.message);
+                }
+            })
+        }
         this.updateBackground()
     }
 
@@ -51,20 +68,33 @@ class App extends React.Component {
 		)
 	}
 }
+let mapStateToProps = state => {
+    return {
+    }
+}
+
+let mapDispatchToProps = dispatch => {
+    return {
+        setUserInfo: (user) => {
+            dispatch({
+                type: 'SET_USER_INFO',
+                user
+            })
+        }
+    }
+}
+let AppContainer = connect(mapStateToProps, mapDispatchToProps)(App)
 
 class router extends React.Component {
 	constructor(props) {
 		super(props)
     }
-
-	componentDidMount() {
-    }
     
 	render() {
 		return (
 			<Router history={hashHistory}>
-				<Route path="/" component={App}>
-					<IndexRoute component={Login} />
+				<Route path="/" component={AppContainer}>
+					<IndexRoute component={Index} />
 					<Route path="/login" component={Login}></Route>
 					<Route path="/register" component={Register}></Route>
 					<Route path="/main" component={Index}></Route>

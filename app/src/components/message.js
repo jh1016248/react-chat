@@ -18,7 +18,7 @@ class Message extends Component {
             <div className={ message.host ? 'message host' : 'message' }>
                 <img src={ message.avatar } />
                 <div>
-                    <p>{message.name + ' ' + message.time}</p>
+                    <p>{message.nickName + ' ' + message.time}</p>
                     <div className="message-content">
                         {message.content}
                     </div>

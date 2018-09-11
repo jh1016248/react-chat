@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
-import { Input, Icon, Button } from 'antd'
+import { Input, Icon, Button, message } from 'antd'
 import { hashHistory } from 'react-router'
 class Login extends Component {
     static propTypes = {
@@ -15,17 +15,38 @@ class Login extends Component {
     }
 
     submit() {
-        let userName = this.refs.username.refs.input.value,
+        let loginName = this.refs.username.refs.input.value,
             password = this.refs.password.refs.input.value
-
-        let userInfo = {
-            id: 1,
-            name: 'jh',
-            avatar: 'static/images/avatar/2.jpg'
+        let sendData = {
+            loginName,
+            password
         }
+        // let userInfo = {
+        //     id: 1,
+        //     name: 'jh',
+        //     avatar: 'static/images/avatar/2.jpg'
+        // }
+        // this.props.setUserInfo(userInfo)
+        // hashHistory.push('/main')
         
-        this.props.setUserInfo(userInfo)
-        hashHistory.push('/main')
+        $client.postData($client.API.login, sendData).then(res => {
+            if(res.code == 1000) {
+                localStorage.token = res.data.token;
+                $client.getData($client.API.getCurrentUser).then(userRes => {
+                    if(userRes.code == 1000) {
+                        this.props.setUserInfo(userRes.data)
+                        message.info('登录成功！');
+                        hashHistory.push('/main')
+                    }
+                    else{
+                        message.info(userRes.message);
+                    }
+                })
+            }
+            else{
+                message.info(res.message)
+            }
+        })
     }
 
     render() {

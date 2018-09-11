@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Button, Icon } from 'antd'
+import { Link } from 'react-router'
 import './styles/header.less'
 
 const ButtonGroup = Button.Group;
-
 
 class Header extends Component {
     static propTypes = {
@@ -31,9 +31,7 @@ class Header extends Component {
                     </ButtonGroup>
                 </div>
                 <div className="user-pannel">
-                    <a href="">
-                        <img src={this.props.user.avatar}/>
-                    </a>
+                    <Link to="/login"><img src={this.props.user.avatar}/></Link>
                 </div>
             </div>
         )

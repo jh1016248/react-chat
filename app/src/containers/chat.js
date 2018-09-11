@@ -29,7 +29,7 @@ class ChatContainer extends Component {
             type: 'text',
             host: host,
             id: user.id,
-            name: user.name,
+            name: user.nickName,
             content: msg,
             avatar: user.avatar,
             time: d.getHours() + ':' + d.getMinutes()
