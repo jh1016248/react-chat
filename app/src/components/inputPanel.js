@@ -14,7 +14,6 @@ class InputPanel extends Component {
 
     handelEnter() {
         let msg = this.refs.message.refs.input.value
-        console.log(msg)
         this.refs.message.refs.input.value = ''
         this.props.handelSubmitMessage(msg)
     }

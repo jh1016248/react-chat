@@ -39,12 +39,12 @@ class Login extends Component {
                         hashHistory.push('/main')
                     }
                     else{
-                        message.info(userRes.message);
+                        message.error(userRes.message);
                     }
                 })
             }
             else{
-                message.info(res.message)
+                message.error(res.message)
             }
         })
     }

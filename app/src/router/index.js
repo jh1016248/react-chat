@@ -46,8 +46,12 @@ class App extends React.Component {
                 }
                 else{
                     message.info(res.message);
+                    hashHistory.push('/login')
                 }
             })
+        }
+        else{
+            hashHistory.replace('/login')
         }
         this.updateBackground()
     }

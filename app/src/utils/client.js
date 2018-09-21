@@ -4,7 +4,6 @@ let apiUrl = 'http://localhost:3000';
 axios.interceptors.request.use(function (config) {
     config.url = apiUrl + config.url;
     config.headers.token = localStorage.token
-    console.log(config)
     return config
 })
 

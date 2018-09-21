@@ -17,7 +17,7 @@ class Header extends Component {
         return (
             <div className="header">
                 <div className="logo">logo</div>
-                <div className="nav">
+                {/* <div className="nav">
                     <ButtonGroup>
                         <Button type="primary" size="large">
                             <Icon type="message" style={{fontSize: '20px', paddingRight: '8px'}}/>
@@ -29,9 +29,9 @@ class Header extends Component {
                             <Icon type="setting"  style={{fontSize: '20px', paddingLeft: '8px'}}/>
                         </Button>
                     </ButtonGroup>
-                </div>
-                <div className="user-pannel">
-                    <Link to="/login"><img src={this.props.user.avatar}/></Link>
+                </div> */}
+                <div className="user-pannel" style={{float: 'right'}}>
+                    <Link to="/login"><img src={this.props.user.avatar} title={this.props.user.nickName}/></Link>
                 </div>
             </div>
         )

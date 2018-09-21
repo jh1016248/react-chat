@@ -3,10 +3,11 @@ const app = new Koa();
 const cors = require('koa2-cors');
 const routers = require('./routers/index');
 const bodyParser = require('koa-bodyparser');
-const jwtKoa = require('koa-jwt')
+const jwtKoa = require('koa-jwt');
 require('./modules/mongoose');
 const secret = 'chat-jwt'
 
+app.listen(3000);
 app.use(bodyParser());
 
 app.use(cors({
@@ -23,9 +24,6 @@ app.use(cors({
     allowHeaders: ['Content-Type', 'Authorization', 'token', 'Accept'],
 }))
 
-
-
-
 app.use(async (ctx, next) => {
     await next();
     const rt = ctx.response.get('X-Response-Time');
@@ -41,9 +39,9 @@ app.use(async (ctx, next) => {
 
 app.use(routers.routes()).use(routers.allowedMethods());
 
+
 app.use(jwtKoa({secret}).unless({
     path: [/^\/api\/user\/login/, /^\/api\/user\/register/] //数组中的路径不需要通过jwt验证
 }))
 
-app.listen(3000);
 console.log('start host:3000')

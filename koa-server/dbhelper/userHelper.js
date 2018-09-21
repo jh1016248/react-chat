@@ -106,22 +106,31 @@ exports.login = async (query) => {
 exports.getCurrentUser = async (ctx) => {
     let token = ctx.headers.token;
     let res = {};
-    let payload
     if (token) {
-        payload = await verify(token, secret)  // // 解密，获取payload
-        ctx.body = {
-            payload
-        }
-        res = {
-            code: 1000,
-            data: payload,
-            message: '获取当前用户成功'
-        }
+        jwt.verify(token, secret, (err, payload) => {
+            if(err) {
+                res = {
+                    code: 1100,
+                    data: {},
+                    message: '登录状态失效，请重新登录'
+                }
+            }
+            else{
+                ctx.body = {
+                    payload
+                }
+                res = {
+                    code: 1000,
+                    data: payload,
+                    message: '获取当前用户成功'
+                }
+            }
+        })
     } else {
         res = {
             code: -1,
             data: {},
-            message: '登录状态失效，请重新登录'
+            message: '请登录'
         }
     }
     return res
